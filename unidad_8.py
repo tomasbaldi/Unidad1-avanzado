@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter.messagebox import *
-import base_datos
+from base_datos import *
 from tkinter import ttk
 import val
 from temas.OpcionTemas import EleccionTema
@@ -103,17 +103,19 @@ class Producto:
         for element in records:
             self.tree.delete(element)
         # Consiguiendo datos
-        sql = 'SELECT * FROM producto ORDER BY id ASC'
+        # sql = 'SELECT * FROM producto ORDER BY id ASC'
 
-        mibase = base_datos.miconexion()
-        micursor = mibase.cursor()
+        # mibase = base_datos.miconexion()
+        # micursor = mibase.cursor()
         
-        micursor.execute(sql)
-        resultado = micursor.fetchall()
+        # micursor.execute(sql)
+        # resultado = micursor.fetchall()
 
-        for fila in resultado:
-            print(fila)
-            self.tree.insert('', 0, text = fila[0], values = (fila[1],fila[2]))
+        resultado = Producto.select()
+
+        # for fila in resultado:
+        #     print(fila)
+        #     self.tree.insert('', 0, text = fila[0], values = (fila[1],fila[2]))
 
 
     def alta(self,):
