@@ -1,6 +1,6 @@
 from tkinter import *
 from modificar import *
-import base_datos
+from base_datos import *
 
 def show(variables, popupModificar):
     popupModificar.destroy()
@@ -13,21 +13,26 @@ def modifica(variables, popupModificar, elobjeto):
     lista = []
     for variable in variables:
         lista.append(variable.get())
-    print(lista)
-    mibase = base_datos.miconexion()
-    print(mibase)
-    print(lista[0])
-    print(lista[1])
-    micursor = mibase.cursor()
-    elid = lista[0]
-    tit =lista[1]
-    desc =lista[2]
-    sql = "UPDATE producto SET titulo = " +"'"+ tit +"' , descripcion = " +"'"+ desc +"' WHERE id = "+ elid +""
+    
+    actualizar = Producto.update(titulo = lista[1], descripcion = lista[2]).where(Producto.ID == lista[0])
+    actualizar.execute()
 
-    print(sql)
-    micursor.execute(sql)
-    mibase.commit()
-    print("-------objeto----------------------------")
+    # print(lista)
+    # mibase = base_datos.miconexion()
+    # print(mibase)
+    # print(lista[0])
+    # print(lista[1])
+    # micursor = mibase.cursor()
+    # elid = lista[0]
+    # tit =lista[1]
+    # desc =lista[2]
+    # sql = "UPDATE producto SET titulo = " +"'"+ tit +"' , descripcion = " +"'"+ desc +"' WHERE id = "+ elid +""
+
+    # print(sql)
+    # micursor.execute(sql)
+    # mibase.commit()
+
+    #-----------objeto----------
     elobjeto.mostrar()
 
 def modificar(objeto):
