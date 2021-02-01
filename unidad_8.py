@@ -1,12 +1,14 @@
 from tkinter import *
 from tkinter.messagebox import *
-from base_datos import *
 from tkinter import ttk
 import val
 from temas.OpcionTemas import EleccionTema
 from guardarModal import *
 from eliminarModal import *
 from modificarModal import *
+
+from base_datos import *
+from peewee import * 
 
 class Producto:
 
@@ -111,11 +113,12 @@ class Producto:
         # micursor.execute(sql)
         # resultado = micursor.fetchall()
 
-        resultado = Producto.select()
+        resultado = Articulos.select()
+        print(resultado)
 
-        # for fila in resultado:
-        #     print(fila)
-        #     self.tree.insert('', 0, text = fila[0], values = (fila[1],fila[2]))
+        for fila in resultado:
+            #print(fila)
+            self.tree.insert('', 0, text = fila[0], values = (fila[1],fila[2]))
 
 
     def alta(self,):

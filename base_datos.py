@@ -28,10 +28,13 @@ class BaseModel(Model):
     class Meta:
         database = db
 
-class Producto(BaseModel):
+class Articulos(BaseModel):
     ID = AutoField(unique = True, primary_key = True)
     titulo = CharField(max_length = 20)
     descripcion = CharField(max_length = 20)
 
+    class Meta:
+        table_name = 'tablaarticulos'
+
 db.connect()
-db.create_tables([Producto])
+db.create_tables([Articulos])
