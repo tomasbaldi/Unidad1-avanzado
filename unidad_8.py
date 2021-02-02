@@ -48,7 +48,7 @@ class Producto:
         # Button(self.root, text="Crear bd", command=lambda:SqliteDatabase('baseprueba3.db').connect()).grid(row=6, column=0)
         # Button(self.root, text="Alta", command=lambda:self.alta()).grid(row=6, column=1)
 
-        Button(self.root, text='Guardar', command=lambda:self.pasarObjetoGuardar()).grid(row=11, column=0)
+        Button(self.root, text='Alta', command=lambda:self.pasarObjetoGuardar()).grid(row=11, column=0)
         Button(self.root, text='Eliminar', command=lambda:self.pasarObjetoEliminar()).grid(row=11, column=1)
         Button(self.root, text='Modificar', command=lambda:self.pasarObjetoModificar()).grid(row=11, column=2)
 

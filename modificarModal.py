@@ -1,11 +1,12 @@
 from tkinter import *
 from modificar import *
 from base_datos import *
+from tkinter import messagebox
 
 def show(variables, popupModificar):
     popupModificar.destroy()
-    imprimir(variables)
-    print(type(variables))
+    # imprimir(variables)
+    # print(type(variables))
 
 
 def modifica(variables, popupModificar, elobjeto):
@@ -34,6 +35,7 @@ def modifica(variables, popupModificar, elobjeto):
 
     #-----------objeto----------
     elobjeto.mostrar()
+    messagebox.showinfo(title="Modificacion de datos", message="Los datos para el ID %s se modificaron correctamente." % lista[0])
 
 def modificar(objeto):
     # print("------- ver objeto -----------")
@@ -42,8 +44,8 @@ def modificar(objeto):
     popupModificar = Toplevel()
     vars_modificar = CrearFormModificar(popupModificar, campos)
     # print(vars_modificar)
-    Button(popupModificar, text='OK', command=(lambda: show(vars_modificar, popupModificar))).pack()
-    Button(popupModificar, text='modificar', command=(lambda: modifica(vars_modificar, popupModificar, objeto))).pack()
+    Button(popupModificar, text='Modificar', command=(lambda: modifica(vars_modificar, popupModificar, objeto))).pack()
+    Button(popupModificar, text='Cancelar', command=(lambda: show(vars_modificar, popupModificar))).pack()    
 
     popupModificar.grab_set()
     popupModificar.focus_set()
