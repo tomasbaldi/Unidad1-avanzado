@@ -36,13 +36,13 @@ def elimina(variables, popupEliminar, elobjeto):
     elobjeto.mostrar()
 
 def eliminar(objeto):
-    print("------- ver objeto -----------")
-    print(objeto)
-    print("------- visto objeto -----------")
+    # print("------- ver objeto -----------")
+    # print(objeto)
+    # print("------- visto objeto -----------")
     popupEliminar = Toplevel()
     vars_eliminar = CrearFormEliminar(popupEliminar, campos)
-    Button(popupEliminar, text='OK', command=(lambda: show(vars_eliminar, popupEliminar))).pack()
-    Button(popupEliminar, text='eliminar', command=(lambda: elimina(vars_eliminar, popupEliminar, objeto))).pack()
+    Button(popupEliminar, text='Eliminar', command=(lambda: elimina(vars_eliminar, popupEliminar, objeto))).pack()
+    Button(popupEliminar, text='Cancelar', command=(lambda: show(vars_eliminar, popupEliminar))).pack()
 
     popupEliminar.grab_set()
     popupEliminar.focus_set()

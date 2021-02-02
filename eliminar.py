@@ -24,7 +24,7 @@ def CrearFormEliminar(root, campos):
     div1.pack(side=LEFT)
     div2.pack(side=RIGHT, expand=YES, fill=X)
     variables = []
-    lab = Label(div1, width=10, text="dni")
+    lab = Label(div1, width=10, text="ID")
     ent = Entry(div2, width=30, relief=SUNKEN)
     lab.pack(side=TOP)
     ent.pack(side=TOP, fill=X)
