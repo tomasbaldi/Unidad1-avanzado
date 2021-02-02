@@ -36,12 +36,12 @@ def modifica(variables, popupModificar, elobjeto):
     elobjeto.mostrar()
 
 def modificar(objeto):
-    print("------- ver objeto -----------")
-    print(objeto)
-    print("------- visto objeto -----------")
+    # print("------- ver objeto -----------")
+    # print(objeto)
+    # print("------- visto objeto -----------")
     popupModificar = Toplevel()
     vars_modificar = CrearFormModificar(popupModificar, campos)
-    print(vars_modificar)
+    # print(vars_modificar)
     Button(popupModificar, text='OK', command=(lambda: show(vars_modificar, popupModificar))).pack()
     Button(popupModificar, text='modificar', command=(lambda: modifica(vars_modificar, popupModificar, objeto))).pack()
 

@@ -9,14 +9,15 @@ def show(variables, popupGuardar):
 
 
 def elimina(variables, popupEliminar, elobjeto):
-    popupEliminar.destroy()
-    lista = []
-    for variable in variables:
-        lista.append(variable.get())
+    try: 
+        popupEliminar.destroy()
+        lista = []
+        for variable in variables:
+            lista.append(variable.get())
  
     #-----------base----------
-    borrar = Articulos.get(Articulos.ID == lista[0])
-    borrar.delete_instance()
+        borrar = Articulos.get(Articulos.ID == lista[0])
+        borrar.delete_instance()
     
     # mibase = base_datos.miconexion()
     # print(mibase)
@@ -34,9 +35,10 @@ def elimina(variables, popupEliminar, elobjeto):
     # print(micursor.rowcount, "Registro borrado")
     
     #-----------objeto----------
-    elobjeto.mostrar()
-    messagebox.showinfo(message="El ID %s se elimino satisfactoriamente." % borrar, title="Eliminar registro")
-
+        elobjeto.mostrar()
+        messagebox.showinfo(message="El ID %s se elimino satisfactoriamente." % borrar, title="Eliminar registro")
+    except:
+        messagebox.showerror(message="El ID no existe en la BBDD.", title="Eliminar registro")
 def eliminar(objeto):
     # print("------- ver objeto -----------")
     # print(objeto)
