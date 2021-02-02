@@ -87,8 +87,8 @@ class Producto:
         modificar(self)
         
     def bg_fg_option(self):
-        print(self.tema_option.get())
-        print(EleccionTema(self.tema_option.get()))
+        # print(self.tema_option.get())
+        # print(EleccionTema(self.tema_option.get()))
         #print(OpcionTemas.EleccionTema(self.tema_option.get()))
         self.temas_opciones["bg"] = EleccionTema(self.tema_option.get())
         self.root["bg"] = EleccionTema(self.tema_option.get())
