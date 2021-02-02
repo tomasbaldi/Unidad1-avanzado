@@ -16,7 +16,10 @@ def elimina(variables, popupEliminar, elobjeto):
  
     #-----------base----------
     borrar = Articulos.get(Articulos.ID == lista[0])
-    borrar.delete_instance()
+    try:
+        borrar.delete_instance()
+    except:
+        messagebox.showerror(message="El registro %s no existe en la BBDD." % borrar, title="Eliminar registro")
     
     # mibase = base_datos.miconexion()
     # print(mibase)
