@@ -18,11 +18,11 @@ class Producto:
         self.root = window
         self.root.title("Tarea POO")
 
-        titulo = Label(self.root, text="Ingrese sus datos", bg="DarkOrchid3", fg="thistle1", height=1, width=60)
-        titulo.grid(row=0, column=0, columnspan=4, padx=1, pady=1, sticky=W+E)
+        # titulo = Label(self.root, text="Ingrese sus datos", bg="DarkOrchid3", fg="thistle1", height=1, width=60)
+        # titulo.grid(row=0, column=0, columnspan=4, padx=1, pady=1, sticky=W+E)
 
-        Label(self.root, text="Título").grid(row=1, column=0, sticky=W)
-        Label(self.root, text="Descripción").grid(row=2, column=0, sticky=W)       
+        # Label(self.root, text="Título").grid(row=1, column=0, sticky=W)
+        # Label(self.root, text="Descripción").grid(row=2, column=0, sticky=W)       
 
 
         # Defino variables para tomar valores de campos de entrada
@@ -30,23 +30,23 @@ class Producto:
         w_ancho = 20
 
 
-        self.entrada_nombre = Entry(self.root, textvariable = self.a_val, width = w_ancho) 
-        self.entrada_nombre.grid(row = 1, column = 1)
-        self.entrada_descripcion = Entry(self.root, textvariable = self.b_val, width = w_ancho) 
-        self.entrada_descripcion.grid(row = 2, column = 1)
+        # self.entrada_nombre = Entry(self.root, textvariable = self.a_val, width = w_ancho) 
+        # self.entrada_nombre.grid(row = 1, column = 1)
+        # self.entrada_descripcion = Entry(self.root, textvariable = self.b_val, width = w_ancho) 
+        # self.entrada_descripcion.grid(row = 2, column = 1)
 
 
         self.tree = ttk.Treeview(height = 10, columns = 3)
         self.tree["columns"]=("one","three")
         self.tree.grid(row = 7, column = 0, columnspan = 3)
         self.tree.heading("#0",text="ID",anchor=CENTER)
-        self.tree.heading("one", text = 'Título', anchor = CENTER)
-        self.tree.heading("three", text = 'Descripción', anchor = CENTER)
+        # self.tree.heading("one", text = 'Título', anchor = CENTER)
+        # self.tree.heading("three", text = 'Descripción', anchor = CENTER)
         # Boton Agregar Producto 
-        ttk.Button(self.root, text = 'Mostrar registros existentes',  command = lambda:self.mostrar()).grid( row = 5, columnspan = 3, sticky = W + E)
+        # ttk.Button(self.root, text = 'Mostrar registros existentes',  command = lambda:self.mostrar()).grid( row = 5, columnspan = 3, sticky = W + E)
 
-        Button(self.root, text="Crear bd", command=lambda:self.crearbd()).grid(row=6, column=0)
-        Button(self.root, text="Alta", command=lambda:self.alta()).grid(row=6, column=1)
+        # Button(self.root, text="Crear bd", command=lambda:SqliteDatabase('baseprueba3.db').connect()).grid(row=6, column=0)
+        # Button(self.root, text="Alta", command=lambda:self.alta()).grid(row=6, column=1)
 
         Button(self.root, text='Guardar', command=lambda:self.pasarObjetoGuardar()).grid(row=11, column=0)
         Button(self.root, text='Eliminar', command=lambda:self.pasarObjetoEliminar()).grid(row=11, column=1)
