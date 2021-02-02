@@ -15,17 +15,17 @@ with shelve.open("temas/OpcionTemas") as db:
 
 def EleccionTema (variable):
     with shelve.open("temas/OpcionTemas") as db:
-        print(variable)
-        print(type(variable))
+        # print(variable)
+        # print(type(variable))
         if variable == 0:
             variable = "tema1"
-            print(variable)
+        #    print(variable)
         elif variable == 1:
             variable = "tema2"
-            print(variable)
+        #    print(variable)
         elif variable == 2:
             variable = "tema3"
-            print(variable)
+        #    print(variable)
         TemaSeleccionado = db[variable]
         return TemaSeleccionado
 
