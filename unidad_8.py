@@ -113,11 +113,18 @@ class Producto:
         # micursor.execute(sql)
         # resultado = micursor.fetchall()
 
-        resultado = Articulos.select()
-        print(resultado)
+        datos = []
+        resultado = Articulos.select().order_by(Articulos.ID.desc())
+        for elemento in resultado:
+            lista_datos = []
+            lista_datos.append(elemento.ID)
+            lista_datos.append(elemento.titulo)
+            lista_datos.append(elemento.descripcion)
+            datos.append(lista_datos)
+        print(datos)    
 
-        for fila in resultado:
-            #print(fila)
+        for fila in datos:
+            # print(fila)
             self.tree.insert('', 0, text = fila[0], values = (fila[1],fila[2]))
 
 
