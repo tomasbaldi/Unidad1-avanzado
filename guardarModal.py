@@ -2,10 +2,11 @@ from tkinter import *
 from guardar import *
 import base_datos
 from base_datos import *
+from tkinter import messagebox
 
 def show(variables, popupGuardar):
     popupGuardar.destroy()
-    imprimir(variables)
+    # imprimir(variables)
 
 
 def guarda(variables, popupGuardar, elobjeto):
@@ -39,6 +40,7 @@ def guarda(variables, popupGuardar, elobjeto):
 
     #------------objeto-----------
     elobjeto.mostrar()
+    messagebox.showinfo(title="Alta de registro", message="El registro se dio de alta satisfactoriamente.")
 
 def guardar(objeto):
     popupGuardar = Toplevel()

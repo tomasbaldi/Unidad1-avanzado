@@ -1,6 +1,6 @@
 from tkinter import *
 archivo = 'persona'
-campos = ('nombre', 'descripcion')
+campos = ('Titulo', 'Descripcion')
 
 
 def imprimir(variables):
