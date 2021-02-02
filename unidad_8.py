@@ -120,8 +120,7 @@ class Producto:
             lista_datos.append(elemento.ID)
             lista_datos.append(elemento.titulo)
             lista_datos.append(elemento.descripcion)
-            datos.append(lista_datos)
-        print(datos)    
+            datos.append(lista_datos)    
 
         for fila in datos:
             # print(fila)
