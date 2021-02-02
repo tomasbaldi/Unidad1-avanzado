@@ -1,6 +1,7 @@
 from tkinter import *
 from eliminar import *
 from base_datos import *
+from tkinter import messagebox
 
 def show(variables, popupGuardar):
     popupGuardar.destroy()
@@ -14,7 +15,7 @@ def elimina(variables, popupEliminar, elobjeto):
         lista.append(variable.get())
  
     #-----------base----------
-    borrar = Producto.get(Producto.id == lista[0])
+    borrar = Articulos.get(Articulos.ID == lista[0])
     borrar.delete_instance()
     
     # mibase = base_datos.miconexion()
@@ -34,6 +35,7 @@ def elimina(variables, popupEliminar, elobjeto):
     
     #-----------objeto----------
     elobjeto.mostrar()
+    messagebox.showinfo(message="El registro %s se elimino satisfactoriamente." % borrar, title="Eliminar registro")
 
 def eliminar(objeto):
     # print("------- ver objeto -----------")
