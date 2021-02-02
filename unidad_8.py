@@ -145,9 +145,6 @@ class Producto:
             showinfo('No Validado', 'El campo de título no cumple los requisitos, ingrese datos alfabéticos')  
         self.mostrar()
 
-
-
-
 if __name__ == '__main__':
     window = Tk()
     application = Producto(window)

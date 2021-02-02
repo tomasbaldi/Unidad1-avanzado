@@ -11,8 +11,6 @@ def imprimir(variables):
 
 
 def CrearFormModificar(root, campos):
-
-    print("hole")
     formulario = Frame(root)
     div1 = Frame(formulario, width=100)
     div2 = Frame(formulario, padx=7, pady=2)

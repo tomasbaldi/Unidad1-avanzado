@@ -14,7 +14,7 @@ def modifica(variables, popupModificar, elobjeto):
     for variable in variables:
         lista.append(variable.get())
     
-    actualizar = Producto.update(titulo = lista[1], descripcion = lista[2]).where(Producto.ID == lista[0])
+    actualizar = Articulos.update(titulo = lista[1], descripcion = lista[2]).where(Articulos.ID == lista[0])
     actualizar.execute()
 
     # print(lista)
