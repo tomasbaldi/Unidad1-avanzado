@@ -17,10 +17,15 @@ def guarda(variables, popupGuardar, elobjeto):
         lista.append(variable.get())
     
     #-------------base------------
-    producto = Producto()
-    producto.titulo = lista[0]
-    producto.descripcion = lista[1]
-    producto.save()
+    # articulo = Articulos()
+    # articulo.titulo = lista[0]
+    # articulo.descripcion = lista[1]
+    # articulo.save()
+
+    res = Articulos.insert({
+    Articulos.titulo: lista[0],
+    Articulos.descripcion: lista[1]
+    }).execute()
 
     # mibase = base_datos.miconexion()
     # print(mibase)
@@ -36,14 +41,12 @@ def guarda(variables, popupGuardar, elobjeto):
     elobjeto.mostrar()
 
 def guardar(objeto):
-    print("------- ver objeto -----------")
-    print(objeto)
-    print("------- visto objeto -----------")
     popupGuardar = Toplevel()
     vars_guardar = CrearFormGuardar(popupGuardar, campos)
     
-    Button(popupGuardar, text='OK', command=(lambda: show(vars_guardar, popupGuardar))).pack()
-    Button(popupGuardar, text='guardar', command=(lambda: guarda(vars_guardar, popupGuardar, objeto))).pack()
+    Button(popupGuardar, text='Guardar', command=(lambda: guarda(vars_guardar, popupGuardar, objeto))).pack()
+    Button(popupGuardar, text='Cancelar', command=(lambda: show(vars_guardar, popupGuardar))).pack()
+    #Button(popupGuardar, text='Guardar', command=(lambda: guarda(vars_guardar, popupGuardar, objeto))).pack()
 
     popupGuardar.grab_set()
     popupGuardar.focus_set()
