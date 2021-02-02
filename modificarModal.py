@@ -2,6 +2,7 @@ from tkinter import *
 from modificar import *
 from base_datos import *
 from tkinter import messagebox
+from peewee import DoesNotExist
 
 def show(variables, popupModificar):
     popupModificar.destroy()
@@ -14,10 +15,16 @@ def modifica(variables, popupModificar, elobjeto):
     lista = []
     for variable in variables:
         lista.append(variable.get())
-    
-    actualizar = Articulos.update(titulo = lista[1], descripcion = lista[2]).where(Articulos.ID == lista[0])
-    actualizar.execute()
 
+    try:
+        verificar_id = Articulos.get(Articulos.ID == lista[0])
+        actualizar = Articulos.update(titulo = lista[1], descripcion = lista[2]).where(Articulos.ID == lista[0])
+        actualizar.execute()
+        messagebox.showinfo(title="Modificacion de datos", message="Los datos para el ID %s se modificaron correctamente." % lista[0])
+        elobjeto.mostrar()
+    except DoesNotExist:
+        messagebox.showerror(title="Modificacion de datos", message="No se encontro el ID %s en la BBDD.\n Pruebe nuevamente con otro ID." % lista[0])
+    
     # print(lista)
     # mibase = base_datos.miconexion()
     # print(mibase)
@@ -34,8 +41,6 @@ def modifica(variables, popupModificar, elobjeto):
     # mibase.commit()
 
     #-----------objeto----------
-    elobjeto.mostrar()
-    messagebox.showinfo(title="Modificacion de datos", message="Los datos para el ID %s se modificaron correctamente." % lista[0])
 
 def modificar(objeto):
     # print("------- ver objeto -----------")
