@@ -75,15 +75,15 @@ class Producto:
             boton.pack(side=TOP)
 
     def pasarObjetoGuardar(self,):
-        print(self)
+        # print(self)
         guardar(self)
 
     def pasarObjetoEliminar(self,):
-        print(self)
+        # print(self)
         eliminar(self)
 
     def pasarObjetoModificar(self,):
-        print(self)
+        # print(self)
         modificar(self)
         
     def bg_fg_option(self):

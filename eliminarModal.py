@@ -4,7 +4,7 @@ from base_datos import *
 
 def show(variables, popupGuardar):
     popupGuardar.destroy()
-    imprimir(variables)
+    # imprimir(variables)
 
 
 def elimina(variables, popupEliminar, elobjeto):
