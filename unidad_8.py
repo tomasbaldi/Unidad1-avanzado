@@ -10,6 +10,8 @@ from modificarModal import *
 from base_datos import *
 from peewee import * 
 
+#asd
+
 class Producto:
 
     def __init__(self, window):
