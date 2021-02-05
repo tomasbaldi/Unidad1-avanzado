@@ -39,11 +39,12 @@ class Producto:
 
 
         self.tree = ttk.Treeview(height = 10, columns = 3)
-        self.tree["columns"]=("one","three")
+        self.tree["columns"]=("one","three", "five")
         self.tree.grid(row = 7, column = 0, columnspan = 3)
         self.tree.heading("#0",text="ID",anchor=CENTER)
         self.tree.heading("one", text = 'Título', anchor = CENTER)
         self.tree.heading("three", text = 'Descripción', anchor = CENTER)
+        self.tree.heading("five", text = 'Objeto', anchor = CENTER)
         # Boton Agregar Producto 
         # ttk.Button(self.root, text = 'Mostrar registros existentes',  command = lambda:self.mostrar()).grid( row = 5, columnspan = 3, sticky = W + E)
 
