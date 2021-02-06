@@ -33,6 +33,9 @@ class Articulos(BaseModel):
     titulo = CharField(max_length = 20)
     descripcion = CharField(max_length = 20)
 
+    def __str__(self):
+        return "El titulo es: {}".format(self.titulo)
+
     class Meta:
         table_name = 'tablaarticulos'
 

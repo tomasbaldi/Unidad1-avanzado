@@ -123,11 +123,12 @@ class Producto:
             lista_datos.append(elemento.ID)
             lista_datos.append(elemento.titulo)
             lista_datos.append(elemento.descripcion)
-            datos.append(lista_datos)    
+            lista_datos.append(str(elemento))
+            datos.append(lista_datos)  
 
         for fila in datos:
-            # print(fila)
-            self.tree.insert('', 0, text = fila[0], values = (fila[1],fila[2]))
+            #print(fila)
+            self.tree.insert('', 0, text = fila[0], values = (fila[1],fila[2],fila[3]))
 
 
     def alta(self,):
