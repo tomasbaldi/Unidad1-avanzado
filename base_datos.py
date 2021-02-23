@@ -1,4 +1,4 @@
-#import mysql.connector
+# import mysql.connector
 
 # ###########################################
 # def crearbd():
@@ -36,5 +36,14 @@ class Articulos(BaseModel):
     class Meta:
         table_name = 'tablaarticulos'
 
+class registrosAlta(BaseModel):
+    hour = DateTimeField()
+    titulo = CharField(max_length = 20)
+    descripcion = CharField(max_length = 20)
+
+    class Meta:
+        table_name = 'tablaaltas'
+
 db.connect()
 db.create_tables([Articulos])
+db.create_tables([registro])
