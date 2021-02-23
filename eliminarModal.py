@@ -5,7 +5,6 @@ from tkinter import messagebox
 
 def show(variables, popupGuardar):
     popupGuardar.destroy()
-    # imprimir(variables)
 
 
 def elimina(variables, popupEliminar, elobjeto):
@@ -14,35 +13,15 @@ def elimina(variables, popupEliminar, elobjeto):
         lista = []
         for variable in variables:
             lista.append(variable.get())
- 
-    #-----------base----------
+
         borrar = Articulos.get(Articulos.ID == lista[0])
         borrar.delete_instance()
     
-    # mibase = base_datos.miconexion()
-    # print(mibase)
-    # print(lista)
-
-    # micursor = mibase.cursor()
-
-    # sql = "DELETE FROM producto WHERE id = %s"
-    # dato = (lista[0],)
-
-    # micursor.execute(sql, dato)
-
-    # mibase.commit()
-
-    # print(micursor.rowcount, "Registro borrado")
-    
-    #-----------objeto----------
         elobjeto.mostrar()
         messagebox.showinfo(message="El ID %s se elimino satisfactoriamente." % borrar, title="Eliminar registro")
     except:
         messagebox.showerror(message="El ID no existe en la BBDD.", title="Eliminar registro")
 def eliminar(objeto):
-    # print("------- ver objeto -----------")
-    # print(objeto)
-    # print("------- visto objeto -----------")
     popupEliminar = Toplevel()
     vars_eliminar = CrearFormEliminar(popupEliminar, campos)
     Button(popupEliminar, text='Eliminar', command=(lambda: elimina(vars_eliminar, popupEliminar, objeto))).pack()
@@ -51,5 +30,3 @@ def eliminar(objeto):
     popupEliminar.grab_set()
     popupEliminar.focus_set()
     popupEliminar.wait_window()
-
-

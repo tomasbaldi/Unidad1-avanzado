@@ -9,7 +9,6 @@ def imprimir(variables):
         print('Input => "%s"' % variable.get())
 
 
-
 def CrearFormModificar(root, campos):
     formulario = Frame(root)
     div1 = Frame(formulario, width=100)
@@ -29,7 +28,6 @@ def CrearFormModificar(root, campos):
         var.set('---')
         variables.append(var)
     return variables
-    """    """
     
 
 if __name__ == '__main__':
